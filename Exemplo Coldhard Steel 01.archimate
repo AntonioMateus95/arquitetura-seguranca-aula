@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Exemplo Coldhard Steel 01" id="id-f4f1ac632a1542d59c4ea2ff9953412b" version="5.0.0">
+  <folder name="Strategy" id="id-308984e90659468bba0d360da71f61cd" type="strategy"/>
+  <folder name="Business" id="id-c43b330761184ef9ab9155a3e7bd05c3" type="business">
+    <element xsi:type="archimate:BusinessEvent" name="&lt;Evento da ameaça> Falha na fonte de alimentação" id="id-e6d4ba23f8b649f98df4d30485f04023"/>
+    <element xsi:type="archimate:BusinessEvent" name="&lt;Evento de perda> Falha na máquina devido a fonte de alimentação insuficiente" id="id-ee5b1383b3c9480aaff537704a05e3b3"/>
+  </folder>
+  <folder name="Application" id="id-19b1073696d14ca9b1c05a51cb52f629" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-4bffe19222a44f36ab3a982ae65f90bd" type="technology">
+    <element xsi:type="archimate:Facility" name="&lt;Ativo> Fonte de alimentação" id="id-9b63b79dc9e7483ebf4c1fdd0a5c5848"/>
+  </folder>
+  <folder name="Motivation" id="id-e31c7294df554a7d87d836366881803c" type="motivation">
+    <element xsi:type="archimate:Assessment" name="&lt;Vulnerabilidade> A fonte de alimentação não suporta grandes flutuações de energia" id="id-a29b306fdbf74e179d66a5e4eeebe883"/>
+    <element xsi:type="archimate:Assessment" name="&lt;Risco> Perda de produção devido a falha na máquina" id="id-33f31f840ab2421daefcd501cec86aa2"/>
+    <element xsi:type="archimate:Goal" name="&lt;Objetivo de controle> Adequar a capacidade de fonte de alimentação" id="id-61d78b0ec1fa4ac1b445246827044b67"/>
+    <element xsi:type="archimate:Requirement" name="&lt;Medida de controle> Substituir a fonte de alimentação" id="id-80492a0eaf8d4432bc548dc32c0f2e70"/>
+  </folder>
+  <folder name="Implementation &amp; Migration" id="id-791033d7b26f4ae38a69f0ceb84f0ead" type="implementation_migration"/>
+  <folder name="Other" id="id-6a3675b795874c9f8a5d3f266cf8d33e" type="other"/>
+  <folder name="Relations" id="id-2e418041a0ec4baba8d190daec6feee2" type="relations">
+    <element xsi:type="archimate:AssociationRelationship" id="id-bf654dfaa7c64403a224aa7e9c15c9cd" source="id-9b63b79dc9e7483ebf4c1fdd0a5c5848" target="id-a29b306fdbf74e179d66a5e4eeebe883"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-a67655c9753a4b78905e0184d599a2b0" source="id-a29b306fdbf74e179d66a5e4eeebe883" target="id-e6d4ba23f8b649f98df4d30485f04023"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-a975924760934297bf506deacaee903b" source="id-e6d4ba23f8b649f98df4d30485f04023" target="id-ee5b1383b3c9480aaff537704a05e3b3"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="id-5d407c4341e147c99eaa2f4b90e7865a" source="id-ee5b1383b3c9480aaff537704a05e3b3" target="id-33f31f840ab2421daefcd501cec86aa2"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-4d71100461724d0888ec9b2f0c21edc9" source="id-61d78b0ec1fa4ac1b445246827044b67" target="id-33f31f840ab2421daefcd501cec86aa2"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-a66faa8642844a468921bdb1c0761ca6" source="id-80492a0eaf8d4432bc548dc32c0f2e70" target="id-61d78b0ec1fa4ac1b445246827044b67"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-8eccbbe40f59450783f21868ea3cfac3" source="id-9b63b79dc9e7483ebf4c1fdd0a5c5848" target="id-80492a0eaf8d4432bc548dc32c0f2e70">
+      <documentation>O ativo realiza a medida de controle para ilustrar que a medida de controle está implementada.&#xD;
+</documentation>
+    </element>
+    <element xsi:type="archimate:InfluenceRelationship" id="id-46493af51eb249ebb164c0321d4a7f41" source="id-80492a0eaf8d4432bc548dc32c0f2e70" target="id-a29b306fdbf74e179d66a5e4eeebe883"/>
+  </folder>
+  <folder name="Views" id="id-892a18c0ab394aeba813f7d60bed8810" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Arquitetura de Segurança" id="id-a616e172aef64535be8477f87adfdd64">
+      <child xsi:type="archimate:DiagramObject" id="id-e696c3525c9949839ef3798fed16aedf" archimateElement="id-9b63b79dc9e7483ebf4c1fdd0a5c5848">
+        <bounds x="108" y="312" width="145" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-79ae18cdc18e4fbe84fea59012650d43" source="id-e696c3525c9949839ef3798fed16aedf" target="id-f563dbb8d71a465ba162863c165af9b6" archimateRelationship="id-bf654dfaa7c64403a224aa7e9c15c9cd"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-579a71cee0724096a046aa6d4612d006" source="id-e696c3525c9949839ef3798fed16aedf" target="id-75e59779b44e42378e167ff341443458" archimateRelationship="id-8eccbbe40f59450783f21868ea3cfac3"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-f563dbb8d71a465ba162863c165af9b6" targetConnections="id-79ae18cdc18e4fbe84fea59012650d43 id-03ed04d8b1114d1fa9e46b9e1099a6a4" archimateElement="id-a29b306fdbf74e179d66a5e4eeebe883">
+        <bounds x="84" y="180" width="205" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-a34b9a36035448f6be8e3eeff9c11081" source="id-f563dbb8d71a465ba162863c165af9b6" target="id-53bdf26e7d6c47aaa197b40b56d1958c" archimateRelationship="id-a67655c9753a4b78905e0184d599a2b0"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-53bdf26e7d6c47aaa197b40b56d1958c" targetConnections="id-a34b9a36035448f6be8e3eeff9c11081" archimateElement="id-e6d4ba23f8b649f98df4d30485f04023">
+        <bounds x="108" y="60" width="169" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-9ad36b560ed6478f985a8c2dd353cebe" source="id-53bdf26e7d6c47aaa197b40b56d1958c" target="id-cd606ea738904b1cb5621878e2bb6b23" archimateRelationship="id-a975924760934297bf506deacaee903b"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-cd606ea738904b1cb5621878e2bb6b23" targetConnections="id-9ad36b560ed6478f985a8c2dd353cebe" archimateElement="id-ee5b1383b3c9480aaff537704a05e3b3">
+        <bounds x="396" y="60" width="193" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-4c21687cd1514520a1d552ff48060ce0" source="id-cd606ea738904b1cb5621878e2bb6b23" target="id-71550567fd5d4f26bb69e7ab968c855c" archimateRelationship="id-5d407c4341e147c99eaa2f4b90e7865a"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-71550567fd5d4f26bb69e7ab968c855c" targetConnections="id-4c21687cd1514520a1d552ff48060ce0 id-23bdd675ecfd4963b19fb1307809698f" archimateElement="id-33f31f840ab2421daefcd501cec86aa2">
+        <bounds x="720" y="60" width="193" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-ea0c9aeefdf24c0fb887c77d3be8b2f6" targetConnections="id-7e99b7d5891d47cab189af1c85a3a17c" archimateElement="id-61d78b0ec1fa4ac1b445246827044b67">
+        <bounds x="720" y="180" width="193" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-23bdd675ecfd4963b19fb1307809698f" source="id-ea0c9aeefdf24c0fb887c77d3be8b2f6" target="id-71550567fd5d4f26bb69e7ab968c855c" archimateRelationship="id-4d71100461724d0888ec9b2f0c21edc9"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-75e59779b44e42378e167ff341443458" targetConnections="id-579a71cee0724096a046aa6d4612d006" archimateElement="id-80492a0eaf8d4432bc548dc32c0f2e70">
+        <bounds x="720" y="312" width="193" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-7e99b7d5891d47cab189af1c85a3a17c" source="id-75e59779b44e42378e167ff341443458" target="id-ea0c9aeefdf24c0fb887c77d3be8b2f6" archimateRelationship="id-a66faa8642844a468921bdb1c0761ca6"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-03ed04d8b1114d1fa9e46b9e1099a6a4" source="id-75e59779b44e42378e167ff341443458" target="id-f563dbb8d71a465ba162863c165af9b6" archimateRelationship="id-46493af51eb249ebb164c0321d4a7f41">
+          <bendpoint startX="-96" startY="-63" endX="534" endY="69"/>
+          <bendpoint startX="-576" startY="-63" endX="54" endY="69"/>
+        </sourceConnection>
+      </child>
+      <child xsi:type="archimate:Note" id="id-176905f1030d450d8df775e6b9e71004" textAlignment="1">
+        <bounds x="400" y="132" width="185" height="80"/>
+        <content>Frequência: probabilidade de perda de produção, uma vez por ano, de $100K</content>
+      </child>
+    </element>
+  </folder>
+</archimate:model>
